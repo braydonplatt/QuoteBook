@@ -1,4 +1,4 @@
-var app = angular.module('quoteBook');
+var app = angular.module('quoteBook'); //where we store all our data
    app.service('dataService', function(){
 
       var quotes = [
@@ -16,11 +16,10 @@ var app = angular.module('quoteBook');
   }
 
   this.addData = function(data){
-  	for (key in data){
-  		if(key.text === true && key.author === true){
+  	if(data.text && data.author)
   			quotes.push(data);
-		}
-    }
+		
+    
  };
   this.removeData = function(text){
      for(var i = 0; i < quotes.length; i++){
@@ -31,3 +30,10 @@ var app = angular.module('quoteBook');
  };
   
 });
+
+
+
+
+//Ajax stuff
+//Data manipulations
+//this is where Data is coming in.
